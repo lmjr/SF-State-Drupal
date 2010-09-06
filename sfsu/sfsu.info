@@ -14,3 +14,9 @@ regions[content] = Content
 regions[right] = Right sidebar
 regions[footer] = Footer
 
+stylesheets[all][] = modules/system/defaults.css
+stylesheets[all][] = modules/node/node.css
+stylesheets[all][] = modules/system/system.css
+stylesheets[all][] = modules/system/system-menus.css
+stylesheets[all][] = modules/user/user.css
+
