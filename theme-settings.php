@@ -1,67 +1,45 @@
 <?php
-/**
-  * Implementation of THEMEHOOK_settings() function.
-  *
-  * @param $saved_settings
-  *   array An array of saved settings for this theme.
-  * @return
-  *   array A form array.
-  */
-function sfsu_settings($saved_settings) {
-/**
-  * The default values for the theme variables. Make sure $defaults exactly
-  * matches the $defaults in the template.php file.
-  */
-  $defaults = array(
-    'sfsu_imagebar_url' => 'http://www.sfsu.edu/template/images/imagebox.jpg',
-    'sfsu_local_css' => '',
-    'sfsu_department' => '',
-    'sfsu_department_url' => '',
-    'sfsu_show_title' => 1,
-    'sfsu_preview_is_popup' => 1,
-  );
+// $Id: theme-settings.php,v 1.7 2008/09/11 09:36:50 johnalbin Exp $
 
+// Include the definition of zen_settings() and zen_theme_get_default_settings().
+include_once './' . drupal_get_path('theme', 'zen') . '/theme-settings.php';
+
+
+/**
+ * Implementation of THEMEHOOK_settings() function.
+ *
+ * @param $saved_settings
+ *   An array of saved settings for this theme.
+ * @return
+ *   A form array.
+ */
+function zen_sfsu_settings($saved_settings) {
+
+  // Get the default values from the .info file.
+  $defaults = zen_theme_get_default_settings('zen_sfsu');
+
+  // Merge the saved variables and their default values.
   $settings = array_merge($defaults, $saved_settings);
-  $form['sfsu_imagebar_url'] = array(
-    '#type' => 'textfield',
-    '#title' => t('The URL to your custom imagebar'),
-    '#description' => t('This is the fully qualified URL to a imagebar image for the header of your site. e.g., http://www.sfsu.edu/template/images/imagebar.jpg'),
-    '#default_value' => $settings['sfsu_imagebar_url'],
-  );
 
-  $form['sfsu_local_css'] = array(
-    '#type' => 'textfield',
-    '#title' => t('The URL to your custom CSS'),
-    '#description' => t('This is the fully qualified URL to a custom stylesheet. e.g., http://www.sfsu.edu/~itpolicy/includes/local.css'),
-    '#default_value' => $settings['sfsu_local_css'],
+  /*
+   * Create the form using Forms API: http://api.drupal.org/api/6
+   */
+  $form = array();
+  /* -- Delete this line if you want to use this setting
+  $form['STARTERKIT_example'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('Use this sample setting'),
+    '#default_value' => $settings['STARTERKIT_example'],
+    '#description'   => t("This option doesn't do anything; it's just an example."),
   );
+  // */
 
-  $form['sfsu_department'] = array(
-    '#type' => 'textfield',
-    '#title' => t('College or Department Name'),
-    '#description' => t('The College or Department Name is optional. If set, it will appear to the right of the site name in the header in {} brackets'),
-    '#default_value' => $settings['sfsu_department'],
-  );
-  $form['sfsu_department_url'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Link to College or Department web site'),
-    '#description' => t('Link to the College or Department Name which is optional. If set along with the department name then it will make it a link.'),
-    '#default_value' => $settings['sfsu_department_url'],
-  );
- $form['sfsu_show_title'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Show the node title on the page as an H1'),
-    '#description' => t('If set then the node title will be displayed above the breadcrumbs but below the tabs on the page'),
-    '#default_value' => $settings['sfsu_department_url'],
-  );
-  $form['sfsu_preview_is_popup'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Make preview a popup'),
-    '#description' => t('This settings make it easier to preview content by making it the preview tab link a popup'),
-    '#default_value' => $settings['sfsu_preview_is_popup'],
-  );
+  // Add the base theme's settings.
+  $form += zen_settings($saved_settings, $defaults);
 
+  // Remove some of the base theme's settings.
+  #unset($form['themedev']['zen_layout']); // We don't need to select the base stylesheet.
 
-  // Return the additional form widgets
+  // Return the form
   return $form;
 }
