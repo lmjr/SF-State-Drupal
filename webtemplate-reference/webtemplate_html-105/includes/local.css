@@ -1,0 +1,23 @@
+/* - - - - - - - *************************************
+Template Version 1.05 - 05/06/09 
+
+Read Me: Use of this template constitutes an agreement
+to follow the SF State Web Template Guidelines at
+http://www.sfsu.edu/template and to meet
+California Government Code 11135, implementing Section 508
+legislation at http://www.sfsu.edu/access/ 
+before publishing pages to the Web. 
+************************************* - - - - - - - */
+
+*						    {margin:0px; padding:0px; font-size:100%}
+
+html					    {}
+/* - - - - - - - image - - - - - - - */
+
+#imagestripe			    {width:100%; background:#333 url(../images/imagebox.jpg) repeat-x 50% 0;}
+
+#imagebox				    {width:98%; max-width:900px; height:60px; margin:auto; padding:0; background:#333 url(../images/imagebox.jpg) repeat-x 50% 0;}
+
+#promobox				    {width:180px; height:60px; overflow:auto; float:right; color:#333;}
+#promobox a			        {color:#464666;}
+#promobox a:hover			{color:#333;}
