@@ -14,9 +14,6 @@ http://www.sfsu.edu/template and to meet California Government Code 11135, imple
 ***************************************************** -->
 
 <head>
-<?php if (!empty($site_slogan)): ?>
-<meta name="description" content="<?php print $site_slogan; ?>" />
-<?php endif; ?>
 <meta name="robots" content="noindex,nofollow" />
 <meta name="googlebot" content="nosnippet,noodp,noarchive,noimageindex" />
 <meta name="viewport" content="width=900" />
@@ -63,12 +60,13 @@ http://www.sfsu.edu/template and to meet California Government Code 11135, imple
                 <?php print $site_name; ?>
                 </a>
             <?php endif; ?>
-          <?php endif; ?> <!--<a class="parent" href="http://www.sfsu.edu/">Parent Site</a>--></h2></div></div>
+          <?php endif; ?> <a class="parent" href="http://www.sfsu.edu/template">SF State Web Template</a></h2></div></div>
 
 <?php #if ($sitestripe): ?>        
 <?php #print $sitestripe; ?>
 <?php #endif; ?><!-- x site -->
 
+<!-- o image -->
 <?php if ($imagestripe): ?>        
 <?php print $imagestripe; ?>
 <?php endif; ?><!-- x image -->

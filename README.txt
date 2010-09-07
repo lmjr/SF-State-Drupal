@@ -1,4 +1,4 @@
-Drupal 6.x Zen sub-theme, San Francisco State University
+Drupal 6.x Zen sub-theme for San Francisco State University.
 
 ONLINE READING
 --------------
