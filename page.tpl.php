@@ -23,9 +23,9 @@ Help in using this theme for Drupal sites at SF State can be found at http://dru
     <meta http-equiv="Content-Type" content="text/css" />
   <?php print $head ?>
   <!-- o css -->
-  <link rel="stylesheet" type="text/css" media="all" href="http://www.sfsu.edu/template/includes/global.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="<?php print base_path() . path_to_theme() ?>/includes/global.css" />
   <?php print $styles ?>
-  <link rel="stylesheet" type="text/css" media="print" href="http://www.sfsu.edu/template/includes/print.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="<?php print base_path() . path_to_theme() ?>/includes/print.css" />
   <!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="http://www.sfsu.edu/template/includes/ie.css"  /><![endif]--> 
   <?php $sfsu_local_css = theme_get_setting('sfsu_local_css'); 
        if($sfsu_local_css) {
@@ -43,7 +43,7 @@ Help in using this theme for Drupal sites at SF State can be found at http://dru
   <!-- x css -->
   <!-- javascript -->
   <?php print $scripts ?>
-  <script type="text/javascript" src="https://www.sfsu.edu/template/includes/global.js"></script>
+  <script type="text/javascript" src="<?php print base_path() . path_to_theme() ?>/includes/global.js"></script>
   <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyle Content in IE */ ?> </script>
  </head>
 <body>
@@ -64,7 +64,7 @@ Help in using this theme for Drupal sites at SF State can be found at http://dru
 			<div> 
       			<span class="readernote"><label for="search">Search SF State</label></span> 
 					<input class="searchbox" type="text" id="search" name="q" size="12" maxlength="50" value="" /> 
-					<input class="searchbutton" type="image" src="https://www.sfsu.edu/template/images/searchbutton.png" alt="Search SF State" /> 
+					<input class="searchbutton" type="image" src="<?php print base_path() . path_to_theme() ?>/images/searchbutton.png" alt="Search SF State" /> 
 			</div> 
       		</form> 
       	</li> 
@@ -171,7 +171,7 @@ Help in using this theme for Drupal sites at SF State can be found at http://dru
 <!-- x content -->
 <!-- o footer -->
 <div id="footerstripe">
-<div id="footerbox"><a href="http://www.sfsu.edu/" title="" ><img src="https://www.sfsu.edu/template/images/logo.png" alt="SF State Home" width="165" height="50" /></a>
+<div id="footerbox"><a href="http://www.sfsu.edu/" title="" ><img src="<?php print base_path() . path_to_theme() ?>images/logo.png" alt="SF State Home" width="165" height="50" /></a>
 <ul>
 <li class="first"><a href="http://www.sfsu.edu/">SF State Home</a></li>
 <li><a href="http://www.sfsu.edu/emailref.htm">Contact</a></li>
