@@ -26,7 +26,7 @@ Help in using this theme for Drupal sites at SF State can be found at http://dru
   <link rel="stylesheet" type="text/css" media="all" href="<?php print base_path() . path_to_theme() ?>/includes/global.css" />
   <?php print $styles ?>
   <link rel="stylesheet" type="text/css" media="print" href="<?php print base_path() . path_to_theme() ?>/includes/print.css" />
-  <!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="http://www.sfsu.edu/template/includes/ie.css"  /><![endif]--> 
+  <!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="<?php print base_path() . path_to_theme() ?>/includes/ie.css"  /><![endif]--> 
   <?php $sfsu_local_css = theme_get_setting('sfsu_local_css'); 
        if($sfsu_local_css) {
          print '<link rel="stylesheet" type="text/css" media="all" href="'. $sfsu_local_css .'" />';
@@ -171,7 +171,7 @@ Help in using this theme for Drupal sites at SF State can be found at http://dru
 <!-- x content -->
 <!-- o footer -->
 <div id="footerstripe">
-<div id="footerbox"><a href="http://www.sfsu.edu/" title="" ><img src="<?php print base_path() . path_to_theme() ?>images/logo.png" alt="SF State Home" width="165" height="50" /></a>
+<div id="footerbox"><a href="http://www.sfsu.edu/" title="" ><img src="<?php print base_path() . path_to_theme() ?>/images/logo.png" alt="SF State Home" width="165" height="50" /></a>
 <ul>
 <li class="first"><a href="http://www.sfsu.edu/">SF State Home</a></li>
 <li><a href="http://www.sfsu.edu/emailref.htm">Contact</a></li>
